@@ -8,4 +8,8 @@
 
 # 技术栈
 
-vue3 , vite , vur-router , pinia , Naive UI
+1. [Vue3](https://vuejs.org/)
+2. [Vue-Router](https://router.vuejs.org/zh/)
+3. [Pinia](https://pinia.vuejs.org/)
+4. [Naive UI](https://www.naiveui.com/en-US/os-theme)
+5. [Vite](https://vitejs.cn/)

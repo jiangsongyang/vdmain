@@ -15,8 +15,8 @@ export default {
     <n-layout-header bordered>
       <layout-header />
     </n-layout-header>
-    <n-layout has-sider>
-      <n-layout-sider content-style="padding: 24px;">
+    <n-layout has-sider style="height: calc(100vh - 100px)">
+      <n-layout-sider bordered>
         <layout-menu />
       </n-layout-sider>
       <n-layout-content content-style="padding: 24px;">

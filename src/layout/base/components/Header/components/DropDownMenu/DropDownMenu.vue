@@ -28,9 +28,13 @@ const handleSelect = (key: string | number) => {
 </script>
 
 <template>
-  <n-dropdown trigger="hover" :options="options" @select="handleSelect">
-    <n-button text type="default">找个地方休息</n-button>
-  </n-dropdown>
+  <div class="drop-down-menu-container">
+    <n-dropdown trigger="hover" :options="options" @select="handleSelect">
+      <n-button text type="default">找个地方休息</n-button>
+    </n-dropdown>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+@import url('./style.less');
+</style>

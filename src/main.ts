@@ -1,5 +1,18 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import { router } from './router/index'
+import { router, setupRouter, setupRouterGuard } from './router'
+import { setupStore } from './store'
 
-createApp(App).use(router).mount('#app')
+const bootstrap = () => {
+  const app = createApp(App)
+
+  setupRouter(app)
+
+  setupRouterGuard(router)
+
+  setupStore(app)
+
+  app.mount('#app')
+}
+
+bootstrap()

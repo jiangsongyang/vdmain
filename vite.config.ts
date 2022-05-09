@@ -10,6 +10,7 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, 'src'),
       '@vicons': resolve(__dirname, './node_modules/@vicons'),
+      '@t': resolve(__dirname, './src/types'),
     },
   },
   plugins: [vue()],

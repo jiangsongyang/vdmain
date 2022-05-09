@@ -17,7 +17,7 @@ const createUserStore = defineStore('user', {
       userId: undefined,
     },
     // token
-    token: undefined,
+    token: 'test token',
     // roleList
     roleList: [],
   }),

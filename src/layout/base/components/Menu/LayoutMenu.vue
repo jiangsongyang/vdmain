@@ -8,6 +8,7 @@ import {
   PawOutline as PawIcon,
   BagOutline as BagOutlineIcon,
 } from '@vicons/ionicons5'
+import {} from '@mock'
 
 function renderIcon(icon: Component) {
   return () => h(NIcon, null, { default: () => h(icon) })

@@ -1,7 +1,6 @@
 import { useRouter } from 'vue-router'
 import { defineStore } from 'pinia'
 import { store } from '../core'
-import { MOCKLoginAPI } from '../../mock'
 
 export type UserInfo = {
   userId: undefined
@@ -46,12 +45,7 @@ const createUserStore = defineStore('user', {
      * @description: login
      */
     async login(loginState: LoginState) {
-      const { data } = await MOCKLoginAPI()
-      const { token } = data
-      this.setToken(token)
-      // to home
-      const router = await useRouter()
-      router.push('/')
+      
     },
   },
 })

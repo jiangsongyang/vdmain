@@ -7,11 +7,16 @@ const resolve = path.resolve
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
-    alias: {
-      '@': resolve(__dirname, 'src'),
-      '@vicons': resolve(__dirname, './node_modules/@vicons'),
-      '@t': resolve(__dirname, './src/types'),
-    },
+    alias: [
+      {
+        find: '@',
+        replacement: resolve(__dirname, 'src'),
+      },
+      {
+        find: '@vicons',
+        replacement: resolve(__dirname, './node_modules/@vicons'),
+      },
+    ],
   },
   plugins: [vue()],
 })

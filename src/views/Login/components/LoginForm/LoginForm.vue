@@ -4,6 +4,7 @@ import { NForm, NFormItem, NInput, NButton, NCard, FormInst } from 'naive-ui'
 import { useUserStore } from '../../../../store'
 import type { LoginState } from '../../../../store'
 
+
 const model = ref<LoginState>({
   name: '',
   password: '',

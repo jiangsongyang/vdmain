@@ -7,7 +7,7 @@ type UseRequestOptions = {
   manual?: boolean
 }
 
-const createBaseRequest = (options: AxiosRequestConfig) => {
+export const createBaseRequest = (options: AxiosRequestConfig) => {
   return getBaseRequest(options)
 }
 
@@ -31,9 +31,7 @@ const createBaseRequest = (options: AxiosRequestConfig) => {
  *
  * ...
  *
- * const {} = await run()
- *
- *
+ * const { data , loading } = await run()
  */
 export const useRequest = (service: any, options: UseRequestOptions = {}) => {
   const finalOptions = { ...options }

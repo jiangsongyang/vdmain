@@ -29,9 +29,18 @@ const setupResponseInterceptors = (instance: AxiosInstance) => {
   )
 }
 
-const createGetRequest = () => {}
+const createGetRequest =
+  (instance: AxiosInstance) =>
+  (url: string, data: any, config: any = {}) =>
+    new Promise((resolve, reject) => {
+      instance.get(url).then(resolve).catch(reject)
+    })
 
-const createPostRequest = () => {}
+const createPostRequest =
+  (instance: AxiosInstance) => (url: string, data: any, config: any) =>
+    new Promise((resolve, reject) => {
+      instance.post(url, data).then(resolve).catch(reject)
+    })
 
 const createRequester = (options: AxiosRequestConfig) => {
   const instance = createAxiosInstance(options)
@@ -41,8 +50,8 @@ const createRequester = (options: AxiosRequestConfig) => {
   setupResponseInterceptors(instance)
 
   return {
-    get: createGetRequest(),
-    post: createPostRequest(),
+    get: createGetRequest(instance),
+    post: createPostRequest(instance),
   }
 }
 

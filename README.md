@@ -13,3 +13,4 @@
 3. [Pinia](https://pinia.vuejs.org/)
 4. [Naive UI](https://www.naiveui.com/en-US/os-theme)
 5. [Vite](https://vitejs.cn/)
+6. [Axios](https://axios-http.com/)

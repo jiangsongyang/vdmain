@@ -67,5 +67,5 @@ const menuOptions: MenuOption[] = [
 </script>
 
 <template>
-  <n-menu :options="menuOptions" />
+  <NMenu :options="menuOptions" />
 </template>

@@ -5,15 +5,12 @@ import WebsiteInfo from './components/WebsiteInfo/WebsiteInfo.vue'
 </script>
 
 <template>
-  <n-grid :cols="2" class="header-container">
-    <n-gi>
-      <website-info />
-    </n-gi>
-    <n-gi>
-      
-        <drop-down-menu />
- 
-    </n-gi>
-  </n-grid>
+  <NGrid :cols="2" class="header-container">
+    <NGi>
+      <WebsiteInfo />
+    </NGi>
+    <NGi>
+      <DropDownMenu />
+    </NGi>
+  </NGrid>
 </template>
-

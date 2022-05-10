@@ -4,10 +4,15 @@ export type UserInfo = {
   userId: undefined
 }
 
-interface UserState {
+type UserState = {
   userInfo: UserInfo
   token?: string
   roleList: any
+}
+
+export type LoginState = {
+  name: string
+  password: string
 }
 
 const createUserStore = defineStore('user', {
@@ -17,7 +22,7 @@ const createUserStore = defineStore('user', {
       userId: undefined,
     },
     // token
-    token: 'test token',
+    token: undefined,
     // roleList
     roleList: [],
   }),
@@ -37,7 +42,9 @@ const createUserStore = defineStore('user', {
     /**
      * @description: login
      */
-    async login(params: any) {},
+    async login(loginState: LoginState) {
+      console.log(loginState)
+    },
   },
 })
 

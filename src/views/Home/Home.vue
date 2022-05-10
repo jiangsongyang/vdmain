@@ -1,3 +1,7 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import Layout from '@/layout/common/Layout.vue'
+</script>
 
-<template>this is Home</template>
+<template>
+  <Layout>this is Home</Layout>
+</template>

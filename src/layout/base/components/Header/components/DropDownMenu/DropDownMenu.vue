@@ -29,9 +29,9 @@ const handleSelect = (key: string | number) => {
 
 <template>
   <div class="drop-down-menu-container">
-    <n-dropdown trigger="hover" :options="options" @select="handleSelect">
-      <n-button text type="default">找个地方休息</n-button>
-    </n-dropdown>
+    <NDropdown trigger="hover" :options="options" @select="handleSelect">
+      <NButton text type="default">找个地方休息</NButton>
+    </NDropdown>
   </div>
 </template>
 

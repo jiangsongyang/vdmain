@@ -10,9 +10,9 @@ export default {
 </script>
 
 <template>
-  <n-message-provider>
-    <base-layout />
-  </n-message-provider>
+  <NMessageProvider>
+    <BaseLayout>
+      <slot />
+    </BaseLayout>
+  </NMessageProvider>
 </template>
-
-<style scoped></style>

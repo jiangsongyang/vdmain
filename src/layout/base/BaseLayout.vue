@@ -11,19 +11,19 @@ export default {
 </script>
 
 <template>
-  <n-layout style="height: 100vh">
-    <n-layout-header bordered>
-      <layout-header />
-    </n-layout-header>
-    <n-layout has-sider style="height: calc(100vh - 100px)">
-      <n-layout-sider bordered>
-        <layout-menu />
-      </n-layout-sider>
-      <n-layout-content content-style="padding: 24px;">
-        <router-view />
-      </n-layout-content>
-    </n-layout>
-  </n-layout>
+  <NLayout style="height: 100vh">
+    <NLayoutHeader bordered>
+      <LayoutHeader />
+    </NLayoutHeader>
+    <NLayout has-sider style="height: calc(100vh - 100px)">
+      <NLayoutSider bordered>
+        <LayoutMenu />
+      </NLayoutSider>
+      <NLayoutContent content-style="padding: 24px;">
+        <slot />
+      </NLayoutContent>
+    </NLayout>
+  </NLayout>
 </template>
 
 <style scoped></style>

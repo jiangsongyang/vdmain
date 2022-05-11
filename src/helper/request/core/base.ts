@@ -1,5 +1,6 @@
 import axios from 'axios'
 import type { AxiosRequestConfig, AxiosInstance } from 'axios'
+import { shouldMock } from '@/helper/utils'
 
 const createAxiosInstance = (options: AxiosRequestConfig) => {
   const axiosOptions = { ...options }
@@ -33,9 +34,10 @@ const createGetRequest =
   (instance: AxiosInstance) =>
   (url: string, data: any, config: any = {}) =>
     new Promise((resolve, reject) => {
-      console.log(process.env.NODE_ENV)
-
-      instance.get(url).then(resolve).catch(reject)
+      // check mock
+      const finalUrl = `/${shouldMock() ? 'mock' : 'api'}` + url
+      // send request
+      instance.get(finalUrl).then(resolve).catch(reject)
     })
 
 const createPostRequest =

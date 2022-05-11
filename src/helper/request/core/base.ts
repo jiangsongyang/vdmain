@@ -33,6 +33,8 @@ const createGetRequest =
   (instance: AxiosInstance) =>
   (url: string, data: any, config: any = {}) =>
     new Promise((resolve, reject) => {
+      console.log(process.env.NODE_ENV)
+
       instance.get(url).then(resolve).catch(reject)
     })
 

@@ -1,6 +1,7 @@
 import { useRouter } from 'vue-router'
 import { defineStore } from 'pinia'
 import { store } from '../core'
+import { useUserAPI } from '@/api'
 
 export type UserInfo = {
   userId: undefined
@@ -45,7 +46,8 @@ const createUserStore = defineStore('user', {
      * @description: login
      */
     async login(loginState: LoginState) {
-      
+      const userAPI = useUserAPI()
+      userAPI.login(loginState)
     },
   },
 })

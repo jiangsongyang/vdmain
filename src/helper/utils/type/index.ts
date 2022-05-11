@@ -9,3 +9,7 @@ export const getType = (tar: any) => {
   }
   return Object.prototype.toString.call(tar).slice(8, -1).toLowerCase()
 }
+
+export const isBoolean = (tar: unknown) => {
+  return getType(tar) === 'boolean'
+}

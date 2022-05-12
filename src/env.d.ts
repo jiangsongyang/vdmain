@@ -7,3 +7,12 @@ declare module '*.vue' {
   export default component
 }
 
+type CustomWindowProps = {
+  $message: any
+}
+
+declare let global: NodeJS.Global & Window;
+
+declare interface Window {
+  $message: any
+}

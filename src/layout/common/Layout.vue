@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { NMessageProvider } from 'naive-ui'
 import BaseLayout from '../base/BaseLayout.vue'
 </script>
 
@@ -10,9 +9,7 @@ export default {
 </script>
 
 <template>
-  <NMessageProvider>
-    <BaseLayout>
-      <slot />
-    </BaseLayout>
-  </NMessageProvider>
+  <BaseLayout>
+    <slot />
+  </BaseLayout>
 </template>

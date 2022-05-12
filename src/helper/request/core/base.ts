@@ -1,6 +1,8 @@
 import axios from 'axios'
 import type { AxiosRequestConfig, AxiosInstance, AxiosResponse } from 'axios'
+
 import { shouldMock } from '@/helper/utils'
+import { HTTP_STATUS, REQUEST_ERROR_MESSAGE } from '@/constant'
 
 const createAxiosInstance = (options: AxiosRequestConfig) => {
   const axiosOptions = { ...options }
@@ -23,8 +25,20 @@ const setupRequestInterceptors = (instance: AxiosInstance) => {
 
 const setupResponseInterceptors = (instance: AxiosInstance) => {
   instance.interceptors.response.use(
-    (response) => response,
+    (response) => {
+      const { status, data } = response
+
+      if (status !== HTTP_STATUS.SUCCESS) {
+        // handle http error
+      }
+
+      // other handler
+
+      // request success
+      return data
+    },
     (error) => {
+      window.$message.error(REQUEST_ERROR_MESSAGE)
       return Promise.reject(error)
     }
   )

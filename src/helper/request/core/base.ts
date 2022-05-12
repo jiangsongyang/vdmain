@@ -1,5 +1,5 @@
 import axios from 'axios'
-import type { AxiosRequestConfig, AxiosInstance } from 'axios'
+import type { AxiosRequestConfig, AxiosInstance, AxiosResponse } from 'axios'
 import { shouldMock } from '@/helper/utils'
 
 const createAxiosInstance = (options: AxiosRequestConfig) => {
@@ -32,18 +32,28 @@ const setupResponseInterceptors = (instance: AxiosInstance) => {
 
 const createGetRequest =
   (instance: AxiosInstance) =>
-  (url: string, data: any, config: any = {}) =>
-    new Promise((resolve, reject) => {
+  <R>(url: string, params: any, config: AxiosRequestConfig = {}) =>
+    new Promise<AxiosResponse<R>>((resolve, reject) => {
       // check mock
       const finalUrl = `/${shouldMock() ? 'mock' : 'api'}` + url
       // send request
-      instance.get(finalUrl).then(resolve).catch(reject)
+      instance
+        .get(finalUrl, {
+          ...config,
+          params,
+        })
+        .then(resolve)
+        .catch(reject)
     })
 
 const createPostRequest =
-  (instance: AxiosInstance) => (url: string, data: any, config: any) =>
-    new Promise((resolve, reject) => {
-      instance.post(url, data).then(resolve).catch(reject)
+  (instance: AxiosInstance) =>
+  <R>(url: string, data: unknown, config: AxiosRequestConfig = {}) =>
+    new Promise<AxiosResponse<R>>((resolve, reject) => {
+      // check mock
+      const finalUrl = `/${shouldMock() ? 'mock' : 'api'}` + url
+      // send request
+      instance.post(finalUrl, data, config).then(resolve).catch(reject)
     })
 
 const createRequester = (options: AxiosRequestConfig) => {

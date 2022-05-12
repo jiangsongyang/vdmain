@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { NForm, NFormItem, NInput, NButton, NCard, FormInst } from 'naive-ui'
-import { useUserStore } from '../../../../store'
-import type { LoginState } from '../../../../store'
+import { useUserStore } from '@/store'
+import type { LoginParams } from '@/api'
 
-
-const model = ref<LoginState>({
+const model = ref<LoginParams>({
   name: '',
   password: '',
 })

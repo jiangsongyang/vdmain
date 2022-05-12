@@ -4,7 +4,6 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "cross-env NODE_ENV=development vite",
-    "dev:mock": "vite --mode mock",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },

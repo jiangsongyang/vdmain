@@ -1,14 +1,14 @@
 import { createBaseRequest } from '@/helper/request'
+import type { LoginParams, LoginResult } from './model'
 
 const AXIOS_OPTIONS = {}
 
 export const createUserAPI = () => {
   return {
-    login: (data: any) => {
-      const request = createBaseRequest(AXIOS_OPTIONS)
-      return new Promise(async () => {
-        return await request.get('/login', data)
-      })
-    },
+    login: (data: LoginParams) =>
+      createBaseRequest(AXIOS_OPTIONS).post< LoginResult>(
+        '/login',
+        data
+      ),
   }
 }

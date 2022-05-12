@@ -3,10 +3,9 @@ import vue from '@vitejs/plugin-vue'
 import { viteMockServe } from 'vite-plugin-mock'
 
 // node modules
-import * as path from 'path'
+import { resolve } from 'path'
 
 export const createViteAlias = (root: string) => {
-  const resolve = path.resolve
   return [
     {
       find: '@',

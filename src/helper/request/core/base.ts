@@ -1,20 +1,19 @@
 import axios from 'axios'
 import type { AxiosRequestConfig, AxiosInstance, AxiosResponse } from 'axios'
-
+import { addTokenHeader } from './helper'
 import { shouldMock } from '@/helper/utils'
 import { HTTP_STATUS, REQUEST_ERROR_MESSAGE } from '@/constant'
 
 const createAxiosInstance = (options: AxiosRequestConfig) => {
   const axiosOptions = { ...options }
-
   const instance = axios.create(axiosOptions)
-
   return instance
 }
 
 const setupRequestInterceptors = (instance: AxiosInstance) => {
   instance.interceptors.request.use(
     (config) => {
+      addTokenHeader(config)
       return config
     },
     (error) => {

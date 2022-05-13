@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { NGrid, NGi } from 'naive-ui'
-import DropDownMenu from './components/DropDownMenu/DropDownMenu.vue'
+import ActionBar from './components/ActionBar/ActionBar.vue'
 import WebsiteInfo from './components/WebsiteInfo/WebsiteInfo.vue'
 </script>
 
@@ -10,7 +10,7 @@ import WebsiteInfo from './components/WebsiteInfo/WebsiteInfo.vue'
       <WebsiteInfo />
     </NGi>
     <NGi>
-      <DropDownMenu />
+      <ActionBar />
     </NGi>
   </NGrid>
 </template>

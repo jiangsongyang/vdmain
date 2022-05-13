@@ -11,4 +11,6 @@ import UIComponentProvider from './components/Application/UIComponentProvider.vu
   </UIComponentProvider>
 </template>
 
-<style></style>
+<style>
+@import url('./global.less');
+</style>

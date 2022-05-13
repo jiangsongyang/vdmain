@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { NAvatar, NH1, NText } from 'naive-ui'
+import { NAvatar, NH3, NText } from 'naive-ui'
 </script>
 
 <template>
@@ -8,9 +8,9 @@ import { NAvatar, NH1, NText } from 'naive-ui'
       size="large"
       src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"
     />
-    <NH1 class="website-name">
-      <NText type="primary"> hi! VDmain </NText>
-    </NH1>
+    <NH3 class="website-name">
+      <NText type="primary">VDmain</NText>
+    </NH3>
   </div>
 </template>
 

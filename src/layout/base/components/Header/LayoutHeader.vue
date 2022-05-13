@@ -5,7 +5,7 @@ import WebsiteInfo from './components/WebsiteInfo/WebsiteInfo.vue'
 </script>
 
 <template>
-  <NGrid :cols="2" class="header-container">
+  <NGrid :cols="2" class="layout-header">
     <NGi>
       <WebsiteInfo />
     </NGi>
@@ -14,3 +14,7 @@ import WebsiteInfo from './components/WebsiteInfo/WebsiteInfo.vue'
     </NGi>
   </NGrid>
 </template>
+
+<style scoped lang="less">
+@import url('./style.less');
+</style>

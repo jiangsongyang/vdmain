@@ -45,7 +45,7 @@ const setupResponseInterceptors = (instance: AxiosInstance) => {
 
 const createGetRequest =
   (instance: AxiosInstance) =>
-  <R>(url: string, params: any, config: AxiosRequestConfig = {}) =>
+  <R>(url: string, params: any = {}, config: AxiosRequestConfig = {}) =>
     new Promise<AxiosResponse<R>>((resolve, reject) => {
       // check mock
       const finalUrl = `/${shouldMock() ? 'mock' : 'api'}` + url

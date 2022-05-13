@@ -1,50 +1,67 @@
-import { router } from '@/router'
 import { defineStore } from 'pinia'
-import { store } from '../core'
+import { router } from '@/router'
 import { useUserAPI, LoginParams } from '@/api'
+import type { UserInfoResult } from '@/api'
+import { useStorage } from '@/hooks'
+import { store } from '../core'
 
-export type UserInfo = {
-  userId: undefined
-}
+const ID = 'user'
 
 type UserState = {
-  userInfo: UserInfo
+  userInfo: UserInfoResult | undefined
   token?: string
-  roleList: any
 }
 
-const createUserStore = defineStore('user', {
+const createUserStore = defineStore(ID, {
   state: (): UserState => ({
     // user info
-    userInfo: {
-      userId: undefined,
-    },
+    userInfo: undefined,
     // token
     token: undefined,
-    // roleList
-    roleList: [],
   }),
-  getters: {
-    getUserInfo(): UserInfo {
-      return this.userInfo
-    },
-  },
   actions: {
     getToken() {
       return this.token
     },
-
-    setToken(info: string | undefined) {
-      this.token = info ? info : ''
+    getUseInfo() {
+      return this.userInfo
+    },
+    setToken(token: string | undefined) {
+      this.token = token
+    },
+    setUserInfo(userInfo: UserInfoResult | undefined) {
+      this.userInfo = userInfo ? userInfo : undefined
     },
     /**
      * @description: login
      */
     async login(loginState: LoginParams) {
       const userAPI = useUserAPI()
-      const { data } = await userAPI.login(loginState)
-      this.setToken(data.token)
-      router.push('/')
+      const { data: loginData } = await userAPI.login(loginState)
+      this.setToken(loginData.token)
+      const { data: userInfo } = await userAPI.getUserInfo()
+      this.setUserInfo(userInfo)
+      router.push({ name: 'Home' })
+    },
+    /**
+     * @description: logout
+     */
+    async logout() {
+      if (this.token) {
+        try {
+          // you can do some other things
+        } catch {
+          console.log('注销Token失败')
+        }
+      }
+      this.cleanStore()
+      router.push({ name: 'Login' })
+    },
+    cleanStore() {
+      const { remove } = useStorage()
+      this.setToken(undefined)
+      this.setUserInfo(undefined)
+      remove(ID)
     },
   },
 })

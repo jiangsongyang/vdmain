@@ -10,13 +10,16 @@ export const piniaPersistencePlugin = (context: PiniaPluginContext) => {
   // check local storage
   // If it starts with " VDM- "
   // set it into store
-  const initState = get($id.toUpperCase())
+  const initState = get($id)
 
   // when state change
   // save it into local storage
-  store.$subscribe((_, state) => {
-    set($id.toUpperCase(), state)
-  })
+  store.$subscribe(
+    (_, state) => {
+      set($id, state)
+    },
+    { detached: true }
+  )
 
   return {
     ...store.$state,

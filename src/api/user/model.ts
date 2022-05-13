@@ -6,3 +6,7 @@ export type LoginParams = {
 export type LoginResult = {
   token: string
 }
+
+export type UserInfoResult = {
+  userName: 'admin',
+}

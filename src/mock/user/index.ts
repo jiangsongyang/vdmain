@@ -23,7 +23,7 @@ export default [
       code: 200,
       message: '获取成功',
       data: {
-        userInfo: {},
+        userName: 'admin',
       },
     },
   },

@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-import LoginForm from './components/LoginForm/LoginForm.vue'
-
-
+  import LoginForm from './components/LoginForm/LoginForm.vue';
 </script>
 
 <template>
@@ -16,5 +14,5 @@ import LoginForm from './components/LoginForm/LoginForm.vue'
 </template>
 
 <style scoped lang="less">
-@import url('./style.less');
+  @import url('./style.less');
 </style>

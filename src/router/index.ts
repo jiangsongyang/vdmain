@@ -1,2 +1,2 @@
-export * from './setup'
-export * from './core'
+export * from './setup';
+export * from './core';

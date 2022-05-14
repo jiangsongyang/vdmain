@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import {} from 'vue'
+  import {} from 'vue';
 </script>
 
 <script lang="ts">
-export default {
-  name: '',
-}
+  export default {
+    name: '',
+  };
 </script>
 
 <template></template>

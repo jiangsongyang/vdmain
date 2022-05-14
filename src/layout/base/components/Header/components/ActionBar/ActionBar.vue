@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import {} from 'vue'
-import { NGrid, NGi } from 'naive-ui'
-import SystemSetting from '../SystemSetting/SystemSetting.vue'
-import DropDownMenu from '../DropDownMenu/DropDownMenu.vue'
+  import {} from 'vue';
+  import { NGrid, NGi } from 'naive-ui';
+  import SystemSetting from '../SystemSetting/SystemSetting.vue';
+  import DropDownMenu from '../DropDownMenu/DropDownMenu.vue';
 </script>
 
 <template>
@@ -20,5 +20,5 @@ import DropDownMenu from '../DropDownMenu/DropDownMenu.vue'
 </template>
 
 <style lang="less" scoped>
-@import url('./style.less');
+  @import url('./style.less');
 </style>

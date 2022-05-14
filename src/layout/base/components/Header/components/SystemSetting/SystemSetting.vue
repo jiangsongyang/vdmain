@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Settings } from '@vicons/ionicons5'
+  import { Settings } from '@vicons/ionicons5';
 </script>
 
 <template>
@@ -7,5 +7,5 @@ import { Settings } from '@vicons/ionicons5'
 </template>
 
 <style lang="less" scoped>
-@import url('./style.less');
+  @import url('./style.less');
 </style>

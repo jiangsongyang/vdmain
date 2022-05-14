@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { NGrid, NGi } from 'naive-ui'
-import ActionBar from './components/ActionBar/ActionBar.vue'
-import WebsiteInfo from './components/WebsiteInfo/WebsiteInfo.vue'
+  import { NGrid, NGi } from 'naive-ui';
+  import ActionBar from './components/ActionBar/ActionBar.vue';
+  import WebsiteInfo from './components/WebsiteInfo/WebsiteInfo.vue';
 </script>
 
 <template>
@@ -16,5 +16,5 @@ import WebsiteInfo from './components/WebsiteInfo/WebsiteInfo.vue'
 </template>
 
 <style scoped lang="less">
-@import url('./style.less');
+  @import url('./style.less');
 </style>

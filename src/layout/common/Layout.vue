@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import BaseLayout from '../base/BaseLayout.vue'
+  import BaseLayout from '../base/BaseLayout.vue';
 </script>
 
 <script lang="ts">
-export default {
-  name: 'layout',
-}
+  export default {
+    name: 'layout',
+  };
 </script>
 
 <template>

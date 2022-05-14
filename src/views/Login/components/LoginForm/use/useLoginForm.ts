@@ -1,14 +1,14 @@
-import { ref } from "vue";
-import { FormInst, FormRules, useMessage } from "naive-ui";
-import { useUserStore } from "@/store";
-import type { LoginParams } from "@/api";
+import { ref } from 'vue';
+import { FormInst, FormRules, useMessage } from 'naive-ui';
+import { useUserStore } from '@/store';
+import type { LoginParams } from '@/api';
 
 export const useLoginForm = () => {
   const message = useMessage();
 
   const model = ref<LoginParams>({
-    name: "",
-    password: "",
+    name: '',
+    password: '',
   });
 
   const loading = ref<boolean>(false);
@@ -19,15 +19,15 @@ export const useLoginForm = () => {
     name: [
       {
         required: true,
-        message: "请输入账号",
-        trigger: ["input", "blur"],
+        message: '请输入账号',
+        trigger: ['input', 'blur'],
       },
     ],
     password: [
       {
         required: true,
-        message: "请输入密码",
-        trigger: ["input", "blur"],
+        message: '请输入密码',
+        trigger: ['input', 'blur'],
       },
     ],
   };

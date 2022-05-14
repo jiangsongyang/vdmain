@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import AppProvider from './components/Application/AppProvider.vue'
-import UIComponentProvider from './components/Application/UIComponentProvider.vue'
+  import AppProvider from './components/Application/AppProvider.vue';
+  import UIComponentProvider from './components/Application/UIComponentProvider.vue';
 </script>
 
 <template>
@@ -12,5 +12,5 @@ import UIComponentProvider from './components/Application/UIComponentProvider.vu
 </template>
 
 <style>
-@import url('./global.less');
+  @import url('./global.less');
 </style>

@@ -1,18 +1,18 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import { router, setupRouter, setupRouterGuard } from './router'
-import { setupStore } from './store'
+import { createApp } from 'vue';
+import App from './App.vue';
+import { router, setupRouter, setupRouterGuard } from './router';
+import { setupStore } from './store';
 
 const bootstrap = () => {
-  const app = createApp(App)
+  const app = createApp(App);
 
-  setupRouter(app)
+  setupRouter(app);
 
-  setupRouterGuard(router)
+  setupRouterGuard(router);
 
-  setupStore(app)
+  setupStore(app);
 
-  app.mount('#app')
-}
+  app.mount('#app');
+};
 
-bootstrap()
+bootstrap();

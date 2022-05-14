@@ -1,19 +1,13 @@
 <script setup lang="ts">
-import { NForm, NFormItem, NInput, NButton, NCard } from "naive-ui";
-import { useLoginForm } from "./use/useLoginForm";
+  import { NForm, NFormItem, NInput, NButton, NCard } from 'naive-ui';
+  import { useLoginForm } from './use/useLoginForm';
 
-const { model, rules, formRef, handleLogin, loading } = useLoginForm();
+  const { model, rules, formRef, handleLogin, loading } = useLoginForm();
 </script>
 
 <template>
   <NCard title="登陆" hoverable>
-    <NForm
-      ref="formRef"
-      :show-require-mark="false"
-      :label-width="60"
-      :model="model"
-      :rules="rules"
-    >
+    <NForm ref="formRef" :show-require-mark="false" :label-width="60" :model="model" :rules="rules">
       <NFormItem label="账号" path="name">
         <NInput
           placeholder="请输入账号"
@@ -31,11 +25,7 @@ const { model, rules, formRef, handleLogin, loading } = useLoginForm();
         />
       </NFormItem>
       <NFormItem>
-        <NButton
-          type="primary"
-          class="login-button"
-          :loading="loading"
-          @click="handleLogin"
+        <NButton type="primary" class="login-button" :loading="loading" @click="handleLogin"
           >登陆</NButton
         >
       </NFormItem>
@@ -44,5 +34,5 @@ const { model, rules, formRef, handleLogin, loading } = useLoginForm();
 </template>
 
 <style scoped lang="less">
-@import url("./style.less");
+  @import url('./style.less');
 </style>

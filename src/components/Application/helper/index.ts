@@ -1,1 +1,1 @@
-export { installGlobalMessage } from './mixins/message'
+export { installGlobalMessage } from './mixins/message';

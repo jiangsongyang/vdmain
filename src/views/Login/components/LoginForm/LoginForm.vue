@@ -2,7 +2,7 @@
 import { NForm, NFormItem, NInput, NButton, NCard } from "naive-ui";
 import { useLoginForm } from "./use/useLoginForm";
 
-const { model, rules, formRef, handleLogin } = useLoginForm();
+const { model, rules, formRef, handleLogin, loading } = useLoginForm();
 </script>
 
 <template>
@@ -31,7 +31,11 @@ const { model, rules, formRef, handleLogin } = useLoginForm();
         />
       </NFormItem>
       <NFormItem>
-        <NButton type="primary" class="login-button" @click="handleLogin"
+        <NButton
+          type="primary"
+          class="login-button"
+          :loading="loading"
+          @click="handleLogin"
           >登陆</NButton
         >
       </NFormItem>

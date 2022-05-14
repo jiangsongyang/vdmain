@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import {} from 'vue'
-import { NButton } from 'naive-ui'
 import { Settings } from '@vicons/ionicons5'
 </script>
 

@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "lint": "npx eslint .",
     "fix": "npx prettier . --write",
-    "precommit" : "lint-staged"
+    "precommit": "lint-staged"
   },
   "husky": {
     "hooks": {
@@ -16,7 +16,10 @@
     }
   },
   "lint-staged": {
-    "*.{ts,vue}": ["pnpm fix", "git add"]
+    "*.{ts,vue}": [
+      "pnpm fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "@vicons/ionicons5": "^0.12.0",

@@ -3,7 +3,5 @@
 </script>
 
 <template>
-
-
   <Layout>this is Home</Layout>
 </template>

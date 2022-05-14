@@ -1,71 +1,11 @@
 <script setup lang="ts">
-import { h } from 'vue'
-import type { Component } from 'vue'
-import { NIcon, NMenu } from 'naive-ui'
-import type { MenuOption } from 'naive-ui'
-import {
-  FishOutline as FishIcon,
-  PawOutline as PawIcon,
-  BagOutline as BagOutlineIcon,
-} from '@vicons/ionicons5'
+import { NMenu } from "naive-ui";
 
-function renderIcon(icon: Component) {
-  return () => h(NIcon, null, { default: () => h(icon) })
-}
+import { useMenu } from "./use/useMenu";
 
-const menuOptions: MenuOption[] = [
-  {
-    label: '鱼',
-    key: 'fish',
-    icon: renderIcon(FishIcon),
-    children: [
-      {
-        label: '红烧',
-        key: 'braise',
-        children: [
-          {
-            label: '加辣',
-            key: 'spicy',
-          },
-        ],
-      },
-      {
-        label: '清蒸',
-        key: 'steamed',
-        children: [
-          {
-            label: '不要葱',
-            key: 'no-green-onion',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    label: '熊掌',
-    key: 'bear-paw',
-    icon: renderIcon(PawIcon),
-    children: [
-      {
-        label: '保护野生动物',
-        key: 'protect-wild-animals',
-      },
-    ],
-  },
-  {
-    label: '两个都要',
-    key: 'both',
-    icon: renderIcon(BagOutlineIcon),
-    children: [
-      {
-        label: '鱼和熊掌不可兼得',
-        key: 'can-not',
-      },
-    ],
-  },
-]
+const { menuOptions, COLLAPSED_WIDTH } = useMenu();
 </script>
 
 <template>
-  <NMenu :options="menuOptions" />
+  <NMenu :collapsed-width="COLLAPSED_WIDTH" :options="menuOptions" />
 </template>

@@ -1,22 +1,31 @@
 <script setup lang="ts">
-import { NLayout, NLayoutHeader, NLayoutSider, NLayoutContent } from 'naive-ui'
-import LayoutHeader from './components/Header/LayoutHeader.vue'
-import LayoutMenu from './components/Menu/LayoutMenu.vue'
+import { NLayout, NLayoutHeader, NLayoutSider, NLayoutContent } from "naive-ui";
+import LayoutHeader from "./components/Header/LayoutHeader.vue";
+import LayoutMenu from "./components/Menu/LayoutMenu.vue";
+import { useMenu } from "./components/Menu/use/useMenu";
+
+const { COLLAPSED_WIDTH } = useMenu();
 </script>
 
 <script lang="ts">
 export default {
-  name: 'base-layout',
-}
+  name: "base-layout",
+};
 </script>
 
 <template>
-  <NLayout style="height: 100vh">
+  <NLayout class="base-layout">
     <NLayoutHeader bordered>
       <LayoutHeader />
     </NLayoutHeader>
-    <NLayout has-sider style="height: calc(100vh - 100px)">
-      <NLayoutSider bordered>
+    <NLayout has-sider class="sider">
+      <NLayoutSider
+        bordered
+        show-trigger
+        collapse-mode="width"
+        :collapsed-width="COLLAPSED_WIDTH"
+        :native-scrollbar="false"
+      >
         <LayoutMenu />
       </NLayoutSider>
       <NLayoutContent content-style="padding: 24px;">
@@ -26,4 +35,6 @@ export default {
   </NLayout>
 </template>
 
-<style scoped></style>
+<style lang="less" scoped>
+@import url('./style.less');
+</style>

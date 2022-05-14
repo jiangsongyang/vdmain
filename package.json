@@ -16,7 +16,7 @@
     }
   },
   "lint-staged": {
-    "*.ts": ["pnpm fix", "git add"]
+    "*.{ts,vue}": ["pnpm fix", "git add"]
   },
   "dependencies": {
     "@vicons/ionicons5": "^0.12.0",

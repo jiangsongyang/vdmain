@@ -1,12 +1,12 @@
 export type LoginParams = {
-  name: string;
-  password: string;
-};
+  name: string
+  password: string
+}
 
 export type LoginResult = {
-  token: string;
-};
+  token: string
+}
 
 export type UserInfoResult = {
-  userName: 'admin';
-};
+  userName: 'admin'
+}

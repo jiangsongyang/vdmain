@@ -1,16 +1,16 @@
 <script setup lang="ts">
-  import { NLayout, NLayoutHeader, NLayoutSider, NLayoutContent } from 'naive-ui';
-  import LayoutHeader from './components/Header/LayoutHeader.vue';
-  import LayoutMenu from './components/Menu/LayoutMenu.vue';
-  import { useMenu } from './components/Menu/use/useMenu';
+    import { NLayout, NLayoutHeader, NLayoutSider, NLayoutContent } from 'naive-ui'
+    import LayoutHeader from './components/Header/LayoutHeader.vue'
+    import LayoutMenu from './components/Menu/LayoutMenu.vue'
+    import { useMenu } from './components/Menu/use/useMenu'
 
-  const { COLLAPSED_WIDTH } = useMenu();
+    const { COLLAPSED_WIDTH } = useMenu()
 </script>
 
 <script lang="ts">
-  export default {
-    name: 'base-layout',
-  };
+    export default {
+        name: 'base-layout'
+    }
 </script>
 
 <template>

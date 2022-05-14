@@ -1,13 +1,13 @@
 <script setup lang="ts">
-  import { useMessage } from 'naive-ui';
-  import { installGlobalMessage } from './helper';
-  window.$message = useMessage();
+    import { useMessage } from 'naive-ui'
+    import { installGlobalMessage } from './helper'
+    window.$message = useMessage()
 
-  const mixin = () => {
-    installGlobalMessage();
-  };
+    const mixin = () => {
+        installGlobalMessage()
+    }
 
-  mixin();
+    mixin()
 </script>
 
 <template>

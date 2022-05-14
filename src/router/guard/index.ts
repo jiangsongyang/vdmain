@@ -1,3 +1,3 @@
-import { createPermissionGuard } from './permissionGuard';
+import { createPermissionGuard } from './permissionGuard'
 
-export const guards = [createPermissionGuard];
+export const guards = [createPermissionGuard]

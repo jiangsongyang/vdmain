@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import { NAvatar, NH3, NText } from 'naive-ui';
+    import { NAvatar, NH3, NText } from 'naive-ui'
 </script>
 
 <template>

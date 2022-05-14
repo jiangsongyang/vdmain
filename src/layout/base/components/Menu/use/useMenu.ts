@@ -1,19 +1,19 @@
-import { h, ref } from 'vue';
-import type { Component } from 'vue';
-import { NIcon } from 'naive-ui';
-import type { MenuOption } from 'naive-ui';
+import { h, ref } from 'vue'
+import type { Component } from 'vue'
+import { NIcon } from 'naive-ui'
+import type { MenuOption } from 'naive-ui'
 import {
   FishOutline as FishIcon,
   PawOutline as PawIcon,
-  BagOutline as BagOutlineIcon,
-} from '@vicons/ionicons5';
+  BagOutline as BagOutlineIcon
+} from '@vicons/ionicons5'
 
-const COLLAPSED_WIDTH = 100;
+const COLLAPSED_WIDTH = 100
 
 export const useMenu = () => {
-  const activeKey = ref<string | null>(null);
+  const activeKey = ref<string | null>(null)
 
-  const renderIcon = (icon: Component) => () => h(NIcon, null, { default: () => h(icon) });
+  const renderIcon = (icon: Component) => () => h(NIcon, null, { default: () => h(icon) })
 
   const menuOptions: MenuOption[] = [
     {
@@ -27,9 +27,9 @@ export const useMenu = () => {
           children: [
             {
               label: '加辣',
-              key: 'spicy',
-            },
-          ],
+              key: 'spicy'
+            }
+          ]
         },
         {
           label: '清蒸',
@@ -37,11 +37,11 @@ export const useMenu = () => {
           children: [
             {
               label: '不要葱',
-              key: 'no-green-onion',
-            },
-          ],
-        },
-      ],
+              key: 'no-green-onion'
+            }
+          ]
+        }
+      ]
     },
     {
       label: '熊掌',
@@ -50,9 +50,9 @@ export const useMenu = () => {
       children: [
         {
           label: '保护野生动物',
-          key: 'protect-wild-animals',
-        },
-      ],
+          key: 'protect-wild-animals'
+        }
+      ]
     },
     {
       label: '两个都要',
@@ -61,15 +61,15 @@ export const useMenu = () => {
       children: [
         {
           label: '鱼和熊掌不可兼得',
-          key: 'can-not',
-        },
-      ],
-    },
-  ];
+          key: 'can-not'
+        }
+      ]
+    }
+  ]
 
   return {
     menuOptions,
     COLLAPSED_WIDTH,
-    activeKey,
-  };
-};
+    activeKey
+  }
+}

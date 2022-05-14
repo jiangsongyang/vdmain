@@ -1,3 +1,3 @@
-import { piniaPersistencePlugin } from './PersistencePlugin';
+import { piniaPersistencePlugin } from './PersistencePlugin'
 
-export const piniaPlugins = [piniaPersistencePlugin];
+export const piniaPlugins = [piniaPersistencePlugin]

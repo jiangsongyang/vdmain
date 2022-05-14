@@ -1,31 +1,31 @@
-import axios from 'axios';
-import type { AxiosRequestConfig, AxiosInstance, AxiosResponse } from 'axios';
-import { addTokenHeader } from './helper';
-import { shouldMock } from '@/helper/utils';
-import { HTTP_STATUS, REQUEST_ERROR_MESSAGE } from '@/constant';
+import axios from 'axios'
+import type { AxiosRequestConfig, AxiosInstance, AxiosResponse } from 'axios'
+import { addTokenHeader } from './helper'
+import { shouldMock } from '@/helper/utils'
+import { HTTP_STATUS, REQUEST_ERROR_MESSAGE } from '@/constant'
 
 const createAxiosInstance = (options: AxiosRequestConfig) => {
-  const axiosOptions = { ...options };
-  const instance = axios.create(axiosOptions);
-  return instance;
-};
+  const axiosOptions = { ...options }
+  const instance = axios.create(axiosOptions)
+  return instance
+}
 
 const setupRequestInterceptors = (instance: AxiosInstance) => {
   instance.interceptors.request.use(
     (config) => {
-      addTokenHeader(config);
-      return config;
+      addTokenHeader(config)
+      return config
     },
     (error) => {
-      return Promise.reject(error);
-    },
-  );
-};
+      return Promise.reject(error)
+    }
+  )
+}
 
 const setupResponseInterceptors = (instance: AxiosInstance) => {
   instance.interceptors.response.use(
     (response) => {
-      const { status, data } = response;
+      const { status, data } = response
 
       if (status !== HTTP_STATUS.SUCCESS) {
         // handle http error
@@ -34,54 +34,54 @@ const setupResponseInterceptors = (instance: AxiosInstance) => {
       // other handler
 
       // request success
-      return data;
+      return data
     },
     (error) => {
-      window.$message.error(REQUEST_ERROR_MESSAGE);
-      return Promise.reject(error);
-    },
-  );
-};
+      window.$message.error(REQUEST_ERROR_MESSAGE)
+      return Promise.reject(error)
+    }
+  )
+}
 
 const createGetRequest =
   (instance: AxiosInstance) =>
   <R>(url: string, params: any = {}, config: AxiosRequestConfig = {}) =>
     new Promise<AxiosResponse<R>>((resolve, reject) => {
       // check mock
-      const finalUrl = `/${shouldMock() ? 'mock' : 'api'}` + url;
+      const finalUrl = `/${shouldMock() ? 'mock' : 'api'}` + url
       // send request
       instance
         .get(finalUrl, {
           ...config,
-          params,
+          params
         })
         .then(resolve)
-        .catch(reject);
-    });
+        .catch(reject)
+    })
 
 const createPostRequest =
   (instance: AxiosInstance) =>
   <R>(url: string, data: unknown, config: AxiosRequestConfig = {}) =>
     new Promise<AxiosResponse<R>>((resolve, reject) => {
       // check mock
-      const finalUrl = `/${shouldMock() ? 'mock' : 'api'}` + url;
+      const finalUrl = `/${shouldMock() ? 'mock' : 'api'}` + url
       // send request
-      instance.post(finalUrl, data, config).then(resolve).catch(reject);
-    });
+      instance.post(finalUrl, data, config).then(resolve).catch(reject)
+    })
 
 const createRequester = (options: AxiosRequestConfig) => {
-  const instance = createAxiosInstance(options);
+  const instance = createAxiosInstance(options)
 
-  setupRequestInterceptors(instance);
+  setupRequestInterceptors(instance)
 
-  setupResponseInterceptors(instance);
+  setupResponseInterceptors(instance)
 
   return {
     get: createGetRequest(instance),
-    post: createPostRequest(instance),
-  };
-};
+    post: createPostRequest(instance)
+  }
+}
 
 export const getBaseRequest = (options: AxiosRequestConfig) => {
-  return createRequester(options);
-};
+  return createRequester(options)
+}

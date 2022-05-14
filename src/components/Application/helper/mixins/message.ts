@@ -1,5 +1,5 @@
-import { useMessage } from 'naive-ui';
+import { useMessage } from 'naive-ui'
 
 export const installGlobalMessage = () => {
-  window.$message = useMessage();
-};
+  window.$message = useMessage()
+}

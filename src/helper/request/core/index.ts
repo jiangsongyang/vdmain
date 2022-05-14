@@ -1,15 +1,10 @@
-import { ref } from 'vue';
-import type { AxiosRequestConfig } from 'axios';
+import type { AxiosRequestConfig } from 'axios'
 
-import { getBaseRequest } from './base';
-
-type UseRequestOptions = {
-  manual?: boolean;
-};
+import { getBaseRequest } from './base'
 
 export const createBaseRequest = (options: AxiosRequestConfig) => {
-  return getBaseRequest(options);
-};
+  return getBaseRequest(options)
+}
 
 /**
  * How to use it
@@ -33,6 +28,6 @@ export const createBaseRequest = (options: AxiosRequestConfig) => {
  *
  * const { data , loading } = await run()
  */
-export const useRequest = (service: any, options: UseRequestOptions = {}) => {
-  const finalOptions = { ...options };
-};
+export const useRequest = () => {
+  // const finalOptions = { ...options }
+}

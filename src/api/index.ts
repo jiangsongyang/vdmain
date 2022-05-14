@@ -1,5 +1,5 @@
-import { createUserAPI } from './user';
+import { createUserAPI } from './user'
 
-export const useUserAPI = createUserAPI;
+export const useUserAPI = createUserAPI
 
-export * from './user/model';
+export * from './user/model'

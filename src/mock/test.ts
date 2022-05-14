@@ -1,5 +1,5 @@
-import userMock from './user';
+import userMock from './user'
 
 export default {
-  userMock,
-};
+  userMock
+}

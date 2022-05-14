@@ -1,12 +1,12 @@
 <script setup lang="ts">
-  import { useUserStore } from '@/store';
-  import { useDropDown } from './use';
-  import { NDropdown, NButton } from 'naive-ui';
+    import { useUserStore } from '@/store'
+    import { useDropDown } from './use'
+    import { NDropdown, NButton } from 'naive-ui'
 
-  const userStore = useUserStore();
-  const { handleSelect, dropDownOptions } = useDropDown();
+    const userStore = useUserStore()
+    const { handleSelect, dropDownOptions } = useDropDown()
 
-  const userName = userStore.getUseInfo()?.userName;
+    const userName = userStore.getUseInfo()?.userName
 </script>
 
 <template>

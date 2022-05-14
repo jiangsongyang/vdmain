@@ -1,1 +1,1 @@
-export const STORAGE_PUBLIC_SYMBOL = 'VDM-';
+export const STORAGE_PUBLIC_SYMBOL = 'VDM-'

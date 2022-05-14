@@ -1,5 +1,5 @@
-import { createViteConfig } from './build';
+import { createViteConfig } from './build'
 
 // https://vitejs.dev/config/
 
-export default createViteConfig();
+export default createViteConfig()

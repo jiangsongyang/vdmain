@@ -1,8 +1,8 @@
 <script setup lang="ts">
-  import { NForm, NFormItem, NInput, NButton, NCard } from 'naive-ui';
-  import { useLoginForm } from './use/useLoginForm';
+    import { NForm, NFormItem, NInput, NButton, NCard } from 'naive-ui'
+    import { useLoginForm } from './use/useLoginForm'
 
-  const { model, rules, formRef, handleLogin, loading } = useLoginForm();
+    const { model, rules, formRef, handleLogin, loading } = useLoginForm()
 </script>
 
 <template>

@@ -6,13 +6,15 @@
     "dev": "cross-env NODE_ENV=development vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
+    "prepare":"husky install",
     "lint": "npx eslint . --fix",
     "fix": "npx prettier . --write",
     "precommit": "lint-staged"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pnpm precommit"
+      "pre-commit": "pnpm precommit",
+      "commit-msg": "node scripts/commit-msg.js"
     }
   },
   "lint-staged": {

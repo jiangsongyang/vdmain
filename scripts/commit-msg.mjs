@@ -3,10 +3,9 @@
 import chalk from 'chalk'
 import { readFileSync } from 'fs'
 
-const msgPath = process.env.GIT_PARAMS
-const msg = readFileSync(msgPath, 'utf-8').trim()
+const msg = readFileSync(path.join(cwd , '.git/COMMIT_DEITMSG'), 'utf-8').trim()
 
-console.log(msgPath, 'msgPath')
+console.log(msg, 'msgPath')
 
 const commitRE =
   /^(revert: )?(feat|fix|docs|dx|style|refactor|perf|test|workflow|build|ci|chore|types|wip|release)(\(.+\))?: .{1,50}/

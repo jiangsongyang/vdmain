@@ -8,8 +8,9 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "prepare": "husky install",
-    "lint": "npx eslint . --fix",
-    "fix": "npx prettier . --write",
+    "lint:eslint": "npx eslint . --fix",
+    "lint:prettier": "npx prettier . --write",
+    "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,css}\" --cache --cache-location node_modules/.cache/stylelint/",
     "precommit": "lint-staged"
   },
   "husky": {
@@ -20,8 +21,9 @@
   },
   "lint-staged": {
     "*.{ts,vue}": [
-      "pnpm fix",
-      "pnpm lint",
+      "pnpm lint:stylelint",
+      "pnpm lint:eslint",
+      "pnpm lint:prettier",
       "git add"
     ]
   },
@@ -30,6 +32,7 @@
     "axios": "^0.27.2",
     "mockjs": "^1.1.0",
     "pinia": "^2.0.14",
+    "v-dmain": "link:",
     "vue": "^3.2.25",
     "vue-router": "4"
   },
@@ -54,6 +57,7 @@
     "lint-staged": "^12.4.1",
     "naive-ui": "^2.28.2",
     "prettier": "^2.6.2",
+    "stylelint": "^14.8.2",
     "typescript": "^4.5.4",
     "vite": "^2.9.7",
     "vite-plugin-mock": "^2.9.6",

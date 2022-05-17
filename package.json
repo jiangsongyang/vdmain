@@ -21,9 +21,12 @@
   },
   "lint-staged": {
     "*.{ts,vue}": [
-      "pnpm lint:stylelint",
       "pnpm lint:eslint",
       "pnpm lint:prettier",
+      "git add"
+    ],
+    "*.{css,less}": [
+      "pnpm lint:stylelint",
       "git add"
     ]
   },

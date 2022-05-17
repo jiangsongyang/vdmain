@@ -20,22 +20,22 @@ const createUserStore = defineStore(ID, {
     token: undefined
   }),
   actions: {
-    getToken () {
+    getToken() {
       return this.token
     },
-    getUseInfo () {
+    getUseInfo() {
       return this.userInfo
     },
-    setToken (token: string | undefined) {
+    setToken(token: string | undefined) {
       this.token = token
     },
-    setUserInfo (userInfo: UserInfoResult | undefined) {
+    setUserInfo(userInfo: UserInfoResult | undefined) {
       this.userInfo = userInfo || undefined
     },
     /**
      * @description: login
      */
-    async login (loginState: LoginParams) {
+    async login(loginState: LoginParams) {
       const userAPI = useUserAPI()
       const { data: loginData } = await userAPI.login(loginState)
       this.setToken(loginData.token)
@@ -46,7 +46,7 @@ const createUserStore = defineStore(ID, {
     /**
      * @description: logout
      */
-    async logout () {
+    async logout() {
       if (this.token) {
         try {
           // you can do some other things
@@ -57,7 +57,7 @@ const createUserStore = defineStore(ID, {
       this.cleanStore()
       router.push({ name: 'Login' })
     },
-    cleanStore () {
+    cleanStore() {
       const { remove } = useStorage()
       this.setToken(undefined)
       this.setUserInfo(undefined)
@@ -66,6 +66,6 @@ const createUserStore = defineStore(ID, {
   }
 })
 
-export function useUserStore () {
+export function useUserStore() {
   return createUserStore(store)
 }

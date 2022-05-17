@@ -1,9 +1,9 @@
 <script setup lang="ts">
-    import { NMenu } from 'naive-ui'
+  import { NMenu } from 'naive-ui'
 
-    import { useMenu } from './use/useMenu'
+  import { useMenu } from './use/useMenu'
 
-    const { menuOptions, COLLAPSED_WIDTH } = useMenu()
+  const { menuOptions, COLLAPSED_WIDTH } = useMenu()
 </script>
 
 <template>

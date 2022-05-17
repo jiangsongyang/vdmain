@@ -5,7 +5,7 @@ const LOGIN_PATH = '/login'
 
 const whitePathList: string[] = [LOGIN_PATH]
 
-export function createPermissionGuard (router: Router) {
+export function createPermissionGuard(router: Router) {
   router.beforeEach((to, from, next) => {
     const userStore = useUserStore()
     const token = userStore.getToken()
